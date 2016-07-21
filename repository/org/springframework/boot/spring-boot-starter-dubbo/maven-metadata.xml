@@ -3,10 +3,15 @@
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-dubbo</artifactId>
   <versioning>
-    <release>1.3.6.20160714.132203-1</release>
+    <release>1.3.6.20160715.011910-6</release>
     <versions>
       <version>1.3.6.20160714.132203-1</version>
+      <version>1.3.6.20160715.011153-2</version>
+      <version>1.3.6.20160715.011441-3</version>
+      <version>1.3.6.20160715.011704-4</version>
+      <version>1.3.6.20160715.011730-5</version>
+      <version>1.3.6.20160715.011910-6</version>
     </versions>
-    <lastUpdated>20160714132203</lastUpdated>
+    <lastUpdated>20160715011910</lastUpdated>
   </versioning>
 </metadata>
