@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.zhiyin.dbs</groupId>
+  <artifactId>dubbo-study</artifactId>
+  <versioning>
+    <release>0.0.1</release>
+    <versions>
+      <version>0.0.1</version>
+    </versions>
+    <lastUpdated>20161113073859</lastUpdated>
+  </versioning>
+</metadata>

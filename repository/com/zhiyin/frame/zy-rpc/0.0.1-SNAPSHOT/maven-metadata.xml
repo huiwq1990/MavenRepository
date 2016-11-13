@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.zhiyin.frame</groupId>
+  <artifactId>zy-rpc</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20161113.073848</timestamp>
+      <buildNumber>2</buildNumber>
+    </snapshot>
+    <lastUpdated>20161113073848</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-20161113.073848-2</value>
+        <updated>20161113073848</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

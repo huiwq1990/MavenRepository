@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.zhiyin.frame</groupId>
-  <artifactId>fake-data</artifactId>
+  <artifactId>rpc-dubbo</artifactId>
   <versioning>
     <versions>
-      <version>0.0.2-SNAPSHOT</version>
+      <version>0.0.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20161113073755</lastUpdated>
+    <lastUpdated>20161113073852</lastUpdated>
   </versioning>
 </metadata>
