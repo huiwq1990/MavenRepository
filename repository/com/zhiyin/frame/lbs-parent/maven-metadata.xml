@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.zhiyin.frame</groupId>
+  <artifactId>lbs-parent</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20161113071436</lastUpdated>
+  </versioning>
+</metadata>
