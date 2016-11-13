@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+    <!--<groupId>org.sonatype.oss</groupId>-->
+    <!--<artifactId>oss-parent</artifactId>-->
+    <!--<version>7</version>-->
+    <!--</parent>-->
+
+    <groupId>com.zhiyin</groupId>
+    <artifactId>zhiyin-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Zhiyin :: Module :: Parent</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- 主要依赖库的版本定义 -->
+        <zhiyin.version>4.3.0-SNAPSHOT</zhiyin.version>
+
+        <springside.version>4.3.0-SNAPSHOT</springside.version>
+        <spring.version>4.2.3.RELEASE</spring.version>
+        <hibernate.version>4.3.7.Final</hibernate.version>
+        <mybatis.version>3.2.7</mybatis.version>
+        <spring-data-jpa.version>1.6.0.RELEASE</spring-data-jpa.version>
+        <tomcat-jdbc.version>7.0.57</tomcat-jdbc.version>
+        <sitemesh.version>2.4.2</sitemesh.version>
+        <shiro.version>1.2.3</shiro.version>
+        <cxf.version>2.7.11</cxf.version>
+        <activemq.version>5.7.0</activemq.version>
+        <quartz.version>2.2.1</quartz.version>
+        <jedis.version>2.6.1</jedis.version>
+        <ehcache.version>2.6.9</ehcache.version>
+        <spymemcached.version>2.11.5</spymemcached.version>
+        <hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
+        <jolokia.version>1.2.3</jolokia.version>
+        <hystrix.version>1.3.16</hystrix.version>
+        <javasimon.version>3.5.2</javasimon.version>
+        <jackson.version>2.4.4</jackson.version>
+        <slf4j.version>1.7.8</slf4j.version>
+        <logback.version>1.1.2</logback.version>
+        <httpclient.version>4.3.6</httpclient.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-io.version>2.4</commons-io.version>
+        <guava.version>18.0</guava.version>
+        <joda-time.version>2.3</joda-time.version>
+        <dozer.version>5.5.1</dozer.version>
+        <freemarker.version>2.3.21</freemarker.version>
+        <aspectj.version>1.8.4</aspectj.version>
+        <junit.version>4.11</junit.version>
+        <assertj.version>1.7.0</assertj.version>
+        <mockito.version>1.10.8</mockito.version>
+        <powermock.version>1.6.0</powermock.version>
+        <selenium.version>2.42.2</selenium.version>
+        <nosqlunit.version>0.8.0</nosqlunit.version>
+        <jetty.version>8.1.16.v20140903</jetty.version>
+        <h2.version>1.3.176</h2.version>
+
+        <geo.version>0.7.1</geo.version>
+        <geohash.version>1.0.10</geohash.version>
+
+        <pagehelper.version>4.1.1</pagehelper.version>
+
+
+        <!-- Plugin的属性 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+        <activemq.version>5.11.1</activemq.version>
+
+        <springfox.version>2.2.2</springfox.version>
+
+
+        <!-- db -->
+        <mysql.version>5.1.22</mysql.version>
+        <h2.version>1.3.176</h2.version>
+        <druid.version>1.0.11</druid.version>
+        <tomcat-jdbc.version>7.0.57</tomcat-jdbc.version>
+        <log4jdbc-remix.version>0.2.7</log4jdbc-remix.version>
+        <!-- db -->
+
+        <mybatis.version>3.3.0</mybatis.version>
+        <mybatis-spring.version>1.2.3</mybatis-spring.version>
+        <mybatis-generator-core.version>1.3.2</mybatis-generator-core.version>
+        <mybatis-mapper.version>3.3.4</mybatis-mapper.version>
+        <pagehelper.version>4.1.1</pagehelper.version>
+
+
+        <jacoco.version>0.6.3.201306030806</jacoco.version>
+
+    </properties>
+
+    <prerequisites>
+        <maven>3.0.0</maven>
+    </prerequisites>
+
+    <modules>
+        <module>zy-maven-plugin</module>
+    </modules>
+
+    <!--<repositories>-->
+    <!--<repository>-->
+    <!--<id>spring-milestones</id>-->
+    <!--<name>Spring Milestones</name>-->
+    <!--<url>http://repo.spring.io/libs-milestone-local</url>-->
+    <!--<snapshots>-->
+    <!--<enabled>false</enabled>-->
+    <!--</snapshots>-->
+    <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>spring-releases</id>-->
+    <!--<name>Spring Releases</name>-->
+    <!--<url>http://repo.spring.io/release</url>-->
+    <!--<snapshots>-->
+    <!--<enabled>false</enabled>-->
+    <!--</snapshots>-->
+    <!--</repository>-->
+    <!--</repositories>-->
+
+    <!-- 设定除中央仓库 (repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查询，如有Nexus私服, 取消注释并指向正确的服务器地址
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://localhost:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>-->
+
+    <!-- 如有Nexus私服, 取消注释并指向正确的服务器地址
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://localhost:8081/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories> -->
+
+
+
+
+    <!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与  artifactId 即可 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SPRINGSIDE MODULES begin -->
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-utils</artifactId>
+                <version>${zhiyin.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-core</artifactId>
+                <version>${zhiyin.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-extension</artifactId>
+                <version>${zhiyin.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-metrics</artifactId>
+                <version>${zhiyin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-redis</artifactId>
+                <version>${zhiyin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-http</artifactId>
+                <version>${zhiyin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhiyin</groupId>
+                <artifactId>zhiyin-map</artifactId>
+                <version>${zhiyin.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis-generator-core.version}</version>
+                <scope>compile</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${mybatis-mapper.version}</version>
+            </dependency>
+            <!-- end mybatis -->
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lazyluke</groupId>
+                <artifactId>log4jdbc-remix</artifactId>
+                <version>${log4jdbc-remix.version}</version>
+            </dependency>
+
+            <!-- LOGGING begin -->
+            <!-- slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- logback -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <!-- 代码直接调用log4j会被桥接到slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- 代码直接调用commons-logging会被桥接到slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- 代码直接调用java.util.logging会被桥接到slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- log4jdbc -->
+            <dependency>
+                <groupId>com.googlecode.log4jdbc</groupId>
+                <artifactId>log4jdbc</artifactId>
+                <version>1.2</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- LOGGING end -->
+
+            <!-- GENERAL UTILS begin -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.9</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- google java library -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- joda -->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time-jsptags</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!-- joda for jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!-- GENERAL UTILS end -->
+
+            <!-- pojo copy -->
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${dozer.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <!-- email -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>1.4.7</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!-- OTHER TOOLS end -->
+
+            <!-- geohash -->
+            <dependency>
+                <groupId>com.github.davidmoten</groupId>
+                <artifactId>geo</artifactId>
+                <version>${geo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.hsr</groupId>
+                <artifactId>geohash</artifactId>
+                <version>${geohash.version}</version>
+            </dependency>
+            <!-- geohash end -->
+
+            <!-- redis simulator -->
+            <dependency>
+                <groupId>com.lordofthejars</groupId>
+                <artifactId>nosqlunit-redis</artifactId>
+                <version>${nosqlunit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- smtp server simulator -->
+            <dependency>
+                <groupId>com.icegreen</groupId>
+                <artifactId>greenmail</artifactId>
+                <version>1.3.1b</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- TEST end -->
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.8</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.7</version>
+            </dependency>
+
+
+            <!-- dubbo -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>2.8.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>3.4.6</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>0.7</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- dubbo -->
+
+
+            <!-- 请求数据验证 -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>1.1.0.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>5.1.0.Final</version>
+            </dependency>
+            <!-- 请求数据验证 -->
+
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>1.3.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Brixton.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+            <!-- JaCoCo runtime must be in classpath for offline mode -->
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>org.jacoco.agent</artifactId>
+                <classifier>runtime</classifier>
+                <version>${jacoco.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.vdurmont</groupId>
+            <artifactId>emoji-java</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- 请求数据验证 -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- 请求数据验证 -->
+
+        <!-- JaCoCo runtime must be in classpath for offline mode -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <classifier>runtime</classifier>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- 插件配置 -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- compiler插件, 设定JDK版本 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>UTF-8</encoding>
+                        <showWarnings>true</showWarnings>
+                    </configuration>
+                </plugin>
+
+                <!-- resource插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+
+                <!-- test插件, 仅测试名称为*Test的类, 使用支持分组测试的surefire-junit47 driver -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.18</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.surefire</groupId>
+                            <artifactId>surefire-junit47</artifactId>
+                            <version>2.18</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- 增加更多的Source和Test Source目录插件 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.9.1</version>
+                </plugin>
+
+                <!-- cobertura 测试覆盖率统计插插件 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+
+                <!-- war打包插件, 设定war包名称不带版本号 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.5</version>
+                    <configuration>
+                        <warName>${project.artifactId}</warName>
+                    </configuration>
+                </plugin>
+
+                <!-- jar打包相关插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.5</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+
+                <!-- clean插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.6.1</version>
+                </plugin>
+
+                <!-- install插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+
+                <!-- enforcer插件, 避免被依赖的依赖引入过期的jar包 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.3.1</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-banned-dependencies</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <requireMavenVersion>
+                                        <version>3.0.3</version>
+                                    </requireMavenVersion>
+                                    <requireJavaVersion>
+                                        <version>${java.version}</version>
+                                    </requireJavaVersion>
+                                    <bannedDependencies>
+                                        <searchTransitive>true</searchTransitive>
+                                        <excludes>
+                                            <exclude>commons-logging</exclude>
+                                            <exclude>aspectj:aspectj*</exclude>
+                                            <exclude>org.springframework</exclude>
+                                        </excludes>
+                                        <includes>
+                                            <include>org.springframework:*:4.*</include>
+                                        </includes>
+                                    </bannedDependencies>
+                                </rules>
+                                <fail>true</fail>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <!-- assembly插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+
+                <!-- dependency相关插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.9</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+
+                <!-- ant插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+
+                <!-- exec java 插件 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.3.2</version>
+                </plugin>
+
+                <!-- jetty -->
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${jetty.version}</version>
+                </plugin>
+
+                <!-- tomcat  -->
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+
+                <!-- This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>[1.0.0,)</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>3.0.4</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.4</version>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>instrument</id>-->
+                        <!--<phase>process-classes</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>instrument</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>restore</id>-->
+                        <!--<phase>prepare-package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>restore-instrumented-classes</goal>-->
+                            <!--<goal>report</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <executions>
+                    <execution>
+                        <id>pre-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.10</version>
+            </plugin>
+        </plugins>
+
+
+    </build>
+
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+
+
+
+        </plugins>
+    </reporting>
+
+
+
+
+
+
+    <!--配置插件来源 -->
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Codehaus repository</id>
+            <url>http://repository.codehaus.org/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+
+    <!--<profiles>-->
+    <!--<profile>-->
+    <!--<id>run-smoke</id>-->
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-surefire-plugin</artifactId>-->
+    <!--<configuration>-->
+    <!--<groups>org.springside.modules.test.category.Smoke</groups>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+    <!--</profile>-->
+    <!--</profiles>-->
+
+
+</project>
+
+
+
+
+
+
