@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.zhiyin</groupId>
+  <artifactId>zhiyin-map</artifactId>
+  <versioning>
+    <versions>
+      <version>4.3.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20161113061300</lastUpdated>
+  </versioning>
+</metadata>
