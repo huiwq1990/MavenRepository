@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.zhiyin.frame</groupId>
+  <artifactId>id-gen</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20161113060133</lastUpdated>
+  </versioning>
+</metadata>
